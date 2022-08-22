@@ -7,9 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Piano</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300&family=Open+Sans:wght@300&display=swap"
+        rel="stylesheet">
 </head>
 
-<body>
+<body ondragstart="return false;" ondrop="return false;">
+    <div id="controls">
+        <div id="record" class="buttons">
+        </div>
+        <div id="slide" class="buttons">
+            <h3>slide: ON</h3>
+        </div>
+        <div id="reverb" class="buttons">
+            <h2>REVERB / spacebar</h2>
+        </div>
+    </div>
     <div id="keyboard">
         <div class="white-keys">
             <div class="white c2"></div>
