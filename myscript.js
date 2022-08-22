@@ -28,8 +28,8 @@ function aud_fade(note, evt) {
     if (note.audio.volume < 1 & evt === "mouseout") console.log(note.audio.volume);
     else if (Math.round(note.audio.volume * 10) > 0.2) {
         console.log(note.audio.volume);
-        note.audio.volume -= 0.25;
-        setTimeout(aud_fade, 70, note);
+        note.audio.volume -= 0.2;
+        setTimeout(aud_fade, 20, note);
     }
 }
 
