@@ -43,19 +43,19 @@ function playAudio() {
     });
 }
 
-function setReverb() {
-    let reverbKey = document.querySelector("#reverb");
+function setSustain() {
+    let sustainKey = document.querySelector("#sustain");
     window.addEventListener("keypress", (event) => {
         if (event.key === ' ' || event.key === 'Spacebar') {
-            reverbKey.style.backgroundColor = "#4d77d1";
-            reverb = true;
+            sustainKey.style.backgroundColor = "#4d77d1";
+            sustain = true;
         }
     });
 
     window.addEventListener("keyup", (event) => {
-        reverb = false;
+        sustain = false;
         if (event.key === ' ' || event.key === 'Spacebar') {
-            reverbKey.style.backgroundColor = null;
+            sustainKey.style.backgroundColor = null;
             allNotes.forEach((note) => {
                 if (!note.isClicked) {
                     aud_fade(note);
@@ -66,7 +66,7 @@ function setReverb() {
 }
 
 function aud_fade(note, evt = "mouseup") {
-    if (reverb || note.audio.volume < 1 & evt === "mouseout") {
+    if (sustain || note.audio.volume < 1 & evt === "mouseout") {
         return;
     }
     else if (Math.round(note.audio.volume * 10) > 0.2) {
@@ -91,17 +91,24 @@ function setSlide() {
     })
 }
 
-function recordAudio() {
-}
-
-function start() {
-
+function setRecord() {
+    let recordButton = document.querySelector("#record");
+    recordButton.addEventListener("click", () => {
+        if (record) {
+            recordButton.innerHTML = "<h2>RECORD</h2>"
+            record = false;
+        }
+        else {
+            recordButton.innerHTML = "<h2>RECORDING</h2>"
+            record = true;
+        }
+    })
 }
 
 let slide = true;
-let reverb = false;
+let sustain = false;
 let allNotes = document.querySelectorAll(".black, .white");
-setReverb();
+setSustain();
 setSlide();
 setAudio("white");
 setAudio("black");

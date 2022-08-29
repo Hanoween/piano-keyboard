@@ -8,8 +8,12 @@ html {
     background-color: aqua;
     font-family: 'IBM Plex Mono', monospace;
     font-family: 'Open Sans', sans-serif;
+    zoom: 100%;
 }
 
+.lol {
+    display: flex;
+}
 #controls {
     display: flex;
     justify-content: space-between;
@@ -29,12 +33,12 @@ html {
     margin: 0 2vw;
 }
 
-#reverb {
+#sustain {
     background-color: #ded5d7;
 }
 
 #record {
-    border: none;
+    background-color: red;
 }
 
 #slide {
